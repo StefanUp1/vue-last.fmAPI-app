@@ -155,46 +155,65 @@
     **********************/
 
     .card-container {
+        -webkit-perspective: 700px;
         perspective: 700px;
     }
 
     .card-flip .card-container {
+        -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: all 0.8s ease;
+        -o-transition: all 0.8s ease;
         transition: all 0.8s ease;
     }
 
     .card-flip div {
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d
     }
 
     .back {
+        -webkit-transform: rotateY(-180deg);
         transform: rotateY(-180deg)
     }
 
     .card-container:hover .card-flip {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg)
     }
 
     .card-flip {
+        display: -ms-grid;
         display: grid;
         grid-template: 1fr / 1fr;
         grid-template-areas: 'frontAndBack';
+        -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: all 0.8s ease;
+        -o-transition: all 0.8s ease;
         transition: all 0.8s ease;
     }
 
     .front {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
         grid-area: frontAndBack
     }
 
     .back {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
         grid-area: frontAndBack;
+        -webkit-transform: rotateY(-180deg);
         transform: rotateY(-180deg)
     }
 
     .card-container {
+        display: -ms-grid;
         display: grid;
+        -webkit-perspective: 700px;
         perspective: 700px;
     }
 

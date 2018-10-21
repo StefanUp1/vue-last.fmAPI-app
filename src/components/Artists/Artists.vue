@@ -15,6 +15,7 @@
                 </div>
             </div>
         </div>
+        
         <!--form for choosing genre-->
         <form v-on:submit.prevent="getData" id="choose-genre">
             <div class="row">
@@ -28,6 +29,7 @@
                 </div>
             </div>
         </form>
+        
         <!-- artist cards -->
         <div class="artists-cards text-center">
             <div class="row">

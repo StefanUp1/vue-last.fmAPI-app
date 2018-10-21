@@ -74,11 +74,19 @@
             scroll() {
                 window.onscroll = () => {
                     let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight //check if user scrolled to the bottom of page
+                    console.log(document.documentElement.scrollTop)
 
+                    //add or remove arrow up depending on scroll position
+                    if (document.documentElement.scrollTop > 200) {
+                        document.querySelector('#arrow-up').classList.remove('hidden')
+                    } else {
+                        document.querySelector('#arrow-up').classList.add('hidden')
+                    }
+
+                    //run 'getData' if user scrolled to the bottom of page
                     if (bottomOfWindow) { //if true
                         this.pageCount++ //page count is 2
-                        this.getData(this.pageCount) //get albums data for 2 pages
-                        document.querySelector('#arrow-up').classList.remove('hidden') // show arrow-up button
+                        this.getData(this.pageCount) //get albums data for 2 pages (and so on...)
                     }
                 }
             }
@@ -98,6 +106,8 @@
 
 <style scoped>
     #arrow-up {
+        -webkit-transition: 0.4s ease;
+        -o-transition: 0.4s ease;
         transition: 0.4s ease;
     }
 
@@ -138,6 +148,8 @@
         ;
         border: 1px solid #fff;
         border-radius: 50%;
+        -webkit-transition: 0.4s ease;
+        -o-transition: 0.4s ease;
         transition: 0.4s ease;
     }
 
